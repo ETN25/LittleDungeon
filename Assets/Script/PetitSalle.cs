@@ -8,6 +8,8 @@ public class PetitSalle : MonoBehaviour
     public int Mobs;
     public GameObject Grille1, Grille2, MobsSpawn;
     bool Activé;
+    public AudioSource sound;
+    public AudioSource sound2;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class PetitSalle : MonoBehaviour
         {
             Grille1.GetComponent<Animator>().SetTrigger("Ouverture");
             Grille2.GetComponent<Animator>().SetTrigger("Ouverture");
+            sound2.Play();
         }
     }
 
@@ -38,6 +41,7 @@ public class PetitSalle : MonoBehaviour
             Grille2.GetComponent<Animator>().SetTrigger("Fermeture");
             Activé = true;
             MobsSpawn.SetActive(true);
+            sound.Play();
         }
     }
 }

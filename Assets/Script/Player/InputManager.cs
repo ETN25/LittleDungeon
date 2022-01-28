@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] MouseLook mouseLook;
     [SerializeField] Animator Sword;
 
+    public AudioSource sound;
     public Controls controls;
     Controls.GroundMouvementActions groundMouvement;
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class InputManager : MonoBehaviour
         {
             Raycast.Attack();
             Sword.SetTrigger("Attack");
+            sound.Play();
         };
 
             groundMouvement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();

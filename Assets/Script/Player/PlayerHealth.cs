@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public AudioSource sound;
    
 
     public HealthBar1 healthBar;
@@ -18,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        sound.Play();
 
     }
 
